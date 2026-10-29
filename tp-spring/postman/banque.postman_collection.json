@@ -1,0 +1,112 @@
+{
+  "info": {
+    "name": "TP Banque - Comptes",
+    "description": "Collection de test de l'API Comptes (JSON et XML)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8082"
+    }
+  ],
+  "item": [
+    {
+      "name": "GET tous les comptes (JSON)",
+      "request": {
+        "method": "GET",
+        "header": [
+          { "key": "Accept", "value": "application/json" }
+        ],
+        "url": { "raw": "{{baseUrl}}/banque/comptes", "host": ["{{baseUrl}}"], "path": ["banque", "comptes"] }
+      }
+    },
+    {
+      "name": "GET tous les comptes (XML)",
+      "request": {
+        "method": "GET",
+        "header": [
+          { "key": "Accept", "value": "application/xml" }
+        ],
+        "url": { "raw": "{{baseUrl}}/banque/comptes", "host": ["{{baseUrl}}"], "path": ["banque", "comptes"] }
+      }
+    },
+    {
+      "name": "GET un compte par id",
+      "request": {
+        "method": "GET",
+        "header": [
+          { "key": "Accept", "value": "application/json" }
+        ],
+        "url": { "raw": "{{baseUrl}}/banque/comptes/2", "host": ["{{baseUrl}}"], "path": ["banque", "comptes", "2"] }
+      }
+    },
+    {
+      "name": "POST creer un compte (JSON)",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" },
+          { "key": "Accept", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"solde\": 1500.0,\n  \"dateCreation\": \"2024-11-01\",\n  \"type\": \"COURANT\"\n}"
+        },
+        "url": { "raw": "{{baseUrl}}/banque/comptes", "host": ["{{baseUrl}}"], "path": ["banque", "comptes"] }
+      }
+    },
+    {
+      "name": "POST creer un compte (XML)",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/xml" },
+          { "key": "Accept", "value": "application/xml" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "<Compte>\n  <solde>1500.0</solde>\n  <dateCreation>2024-11-01</dateCreation>\n  <type>COURANT</type>\n</Compte>"
+        },
+        "url": { "raw": "{{baseUrl}}/banque/comptes", "host": ["{{baseUrl}}"], "path": ["banque", "comptes"] }
+      }
+    },
+    {
+      "name": "PUT modifier un compte (JSON)",
+      "request": {
+        "method": "PUT",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" },
+          { "key": "Accept", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"solde\": 2000.0,\n  \"dateCreation\": \"2024-11-01\",\n  \"type\": \"EPARGNE\"\n}"
+        },
+        "url": { "raw": "{{baseUrl}}/banque/comptes/2", "host": ["{{baseUrl}}"], "path": ["banque", "comptes", "2"] }
+      }
+    },
+    {
+      "name": "PUT modifier un compte (XML)",
+      "request": {
+        "method": "PUT",
+        "header": [
+          { "key": "Content-Type", "value": "application/xml" },
+          { "key": "Accept", "value": "application/xml" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "<Compte>\n  <solde>2500.0</solde>\n  <dateCreation>2024-11-02</dateCreation>\n  <type>COURANT</type>\n</Compte>"
+        },
+        "url": { "raw": "{{baseUrl}}/banque/comptes/2", "host": ["{{baseUrl}}"], "path": ["banque", "comptes", "2"] }
+      }
+    },
+    {
+      "name": "DELETE supprimer un compte",
+      "request": {
+        "method": "DELETE",
+        "url": { "raw": "{{baseUrl}}/banque/comptes/2", "host": ["{{baseUrl}}"], "path": ["banque", "comptes", "2"] }
+      }
+    }
+  ]
+}

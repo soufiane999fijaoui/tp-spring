@@ -1,0 +1,5 @@
+com\example\tpspring\repositories\CompteRepository.class
+com\example\tpspring\controllers\CompteController.class
+com\example\tpspring\entities\TypeCompte.class
+com\example\tpspring\TpSpringApplication.class
+com\example\tpspring\entities\Compte.class
